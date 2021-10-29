@@ -1,41 +1,36 @@
+import { FC, useState, useEffect, useCallback } from 'react';
 import { ethers } from 'ethers';
-import { useState, useEffect, useCallback } from 'react';
-import Block from '../Block';
 import './styles.css';
-import { FC } from 'react';
+import Block from '../Block';
+import BlockDetail from '../BlockDetail';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 const BlockList: FC = () => {
-  const [latestBlock, setLatestBlock] = useState(0);
+  const [selectedBlock, setSelectedBlock] = useState(0);
   const [blockList, setBlockList] = useState<number[]>([]);
 
+  // Create listener to listen for new blocks in the blockchain
+  // This will bring the last block created in the first call so there's
+  // no need to make a separate request on mount
   const createNewBlocksListener = useCallback(() => {
     provider.on('block', newBlockNum => {
-      setLatestBlock(newBlockNum);
+      // Create array with the last 10 block numbers
+      const newList = Array.from({ length: 10 }, (_, i) => newBlockNum - i);
+      setBlockList(newList);
     });
   }, []);
 
   useEffect(() => {
-    // Create listener to listen for new blocks in the blockchain
     createNewBlocksListener();
   }, [createNewBlocksListener]);
-
-  useEffect(() => {
-    if (latestBlock !== 0) {
-      // Create array with the last 10 block numbers
-      const newList = Array.from({ length: 10 }, (_, i) => latestBlock - i);
-      setBlockList(newList);
-    }
-  }, [latestBlock]);
 
   return (
     <div className='App'>
       <div className='block-list'>
-        {blockList.map(item => (
-          <Block>
-            <div key={item}>{item}</div>
-          </Block>
+        {selectedBlock !== 0 && <BlockDetail onClose={() => setSelectedBlock(0)} />}
+        {blockList.map(blockNumber => (
+          <Block key={blockNumber} onClick={() => setSelectedBlock(blockNumber)}>{blockNumber}</Block>
         ))}
       </div>
     </div>
