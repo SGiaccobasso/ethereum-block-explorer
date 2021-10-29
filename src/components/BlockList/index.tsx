@@ -21,15 +21,13 @@ const BlockList: FC = () => {
   useEffect(() => createNewBlocksListener(), [createNewBlocksListener]);
 
   return (
-    <div className='App'>
-      <div className='block-list'>
-        {selectedBlock !== 0 && <BlockDetail onClose={() => setSelectedBlock(0)} blockNumber={selectedBlock} />}
-        {blockList.map(blockNumber => (
-          <Block key={blockNumber} onClick={() => setSelectedBlock(blockNumber)}>
-            {blockNumber}
-          </Block>
-        ))}
-      </div>
+    <div className='block-list'>
+      {selectedBlock !== 0 && <BlockDetail onClose={() => setSelectedBlock(0)} blockNumber={selectedBlock} />}
+      {blockList.map(blockNumber => (
+        <Block key={blockNumber} onClick={() => setSelectedBlock(blockNumber)}>
+          {blockNumber}
+        </Block>
+      ))}
     </div>
   );
 };

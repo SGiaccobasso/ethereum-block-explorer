@@ -8,15 +8,13 @@ interface Props {
 
 const Block: FC<Props> = ({ children, onClick }) => {
   return (
-    <>
-      <div className='container' onClick={e => onClick(e)}>
-        <img src={logo} className='logo' alt='ETH' />
-        <div className='col'>
-          <div>Block</div>
-          <div className='text-container'> #{children}</div>
-        </div>
+    <div className='container' onClick={e => onClick(e)}>
+      <img src={logo} className='logo' alt='ETH' />
+      <div className='text-container'>
+        <div className='title'>Block</div>
+        <div>#{children}</div>
       </div>
-    </>
+    </div>
   );
 };
 
