@@ -1,0 +1,15 @@
+.block-list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(5, 0, 31);
+  background: linear-gradient(
+    90deg,
+    rgba(5, 0, 31, 1) 0%,
+    rgba(9, 9, 10, 1) 62%,
+    rgba(5, 0, 31, 1) 100%
+  );
+}
