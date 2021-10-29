@@ -9,7 +9,7 @@ interface Props {
 const Block: FC<Props> = ({ children, onClick }) => {
   return (
     <>
-      <div className='container' onClick={onClick}>
+      <div className='container' onClick={e => onClick(e)}>
         <img src={logo} className='logo' alt='ETH' />
         <div className='col'>
           <div>Block</div>
@@ -19,4 +19,5 @@ const Block: FC<Props> = ({ children, onClick }) => {
     </>
   );
 };
+
 export default Block;

@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ethers } from 'ethers';
+
+window.provider = new ethers.providers.Web3Provider(window.ethereum);
 
 ReactDOM.render(
   <React.StrictMode>
