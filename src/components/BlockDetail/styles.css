@@ -11,6 +11,18 @@
   transform: translate(-50%, -50%);
   background: #313131;
   overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal-show {
+  top: 50%;
+  left: 50%;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier();
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  opacity: 1;
 }
 
 .bg {
@@ -21,6 +33,16 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.modal-hidden {
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier();
+}
+
+.show {
+  display: block !important;
 }
 
 .modal-header {

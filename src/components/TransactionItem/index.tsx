@@ -16,7 +16,7 @@ const TransactionsList: FC<Props> = ({ transactionData: { value, hash, gasPrice,
     <div onClick={() => setIsExpanded(!isExpanded)} className='list-item'>
       <div className='transaction-hash'>{hash}</div>
       {isExpanded && (
-        <div className='expanded-container'>
+        <div className={isExpanded ? 'expanded-container expanded-show' : 'expanded-container'}>
           <PanelRow title='From'> {from}</PanelRow>
           <PanelRow title='To'> {to}</PanelRow>
           <PanelRow title='Value'> {ethers.utils.formatEther(value)} ETH</PanelRow>

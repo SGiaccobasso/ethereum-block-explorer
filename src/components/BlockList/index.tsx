@@ -22,7 +22,7 @@ const BlockList: FC = () => {
 
   return (
     <div className='block-list'>
-      {selectedBlock !== 0 && <BlockDetail onClose={() => setSelectedBlock(0)} blockNumber={selectedBlock} />}
+      <BlockDetail onClose={() => setSelectedBlock(0)} blockNumber={selectedBlock} />
       {blockList.map(blockNumber => (
         <Block key={blockNumber} onClick={() => setSelectedBlock(blockNumber)}>
           {blockNumber}
