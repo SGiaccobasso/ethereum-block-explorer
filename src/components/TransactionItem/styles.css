@@ -1,0 +1,34 @@
+.panel-expanded {
+  max-height: 400px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.panel-close {
+  max-height: 0;
+}
+
+.list-item {
+  text-align: left;
+  padding: 10px 10px;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.list-item:nth-child(even) {
+  background: #1b1b1b;
+}
+
+.expanded-container > div {
+  padding-top: 10px;
+}
+
+.expanded-container > div > span {
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.transaction-hash {
+  color: #2196f3;
+  font-weight: bold;
+}

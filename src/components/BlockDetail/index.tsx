@@ -27,7 +27,7 @@ const BlockDetail: FC<Props> = ({ onClose, blockNumber }) => {
             <div className='modal-header'>
               <img src={logo} className='logo-title' alt='ETH' />
               <div className='title-section'>
-                <span className='title'>Block</span> {blockData.number} #{blockData.hash}
+                <span className='detail-title'>Block {blockData.number}</span> #{blockData.hash}
               </div>
             </div>
             <div className='list-container'>

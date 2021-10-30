@@ -1,4 +1,4 @@
-ul {
+.list-container {
   max-height: 100%;
   overflow-y: scroll;
   overflow-wrap: break-word;
@@ -10,18 +10,3 @@ ul {
   -webkit-overflow-scrolling: touch;
 }
 
-li {
-  text-align: left;
-  padding: 10px 10px;
-  cursor: pointer;
-  color:aliceblue
-
-}
-
-li:last-child {
-  border-bottom: none;
-}
-
-li:nth-child(even) {
-  background: #1b1b1b;
-}

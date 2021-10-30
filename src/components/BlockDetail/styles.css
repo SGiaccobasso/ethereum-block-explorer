@@ -40,7 +40,7 @@
 }
 
 .title-section {
-  width: 70%;
+  width: 85%;
   overflow-wrap: break-word;
 }
 
@@ -49,4 +49,9 @@
   margin-right: 20px;
   width: auto;
   display: inline-block;
+}
+
+.detail-title {
+  font-weight: bold;
+  color: #2196f3;
 }

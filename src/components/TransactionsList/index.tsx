@@ -1,6 +1,6 @@
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { FC } from 'react';
-
+import TransactionItem from '../TransactionItem';
 import './styles.css';
 
 interface Props {
@@ -9,11 +9,11 @@ interface Props {
 
 const TransactionsList: FC<Props> = ({ transactions }) => {
   return (
-    <ul>
+    <div className='list-container'>
       {transactions.map(item => (
-        <li key={item.hash}>{item.hash}</li>
+        <TransactionItem key={item.hash} transactionData={item}></TransactionItem>
       ))}
-    </ul>
+    </div>
   );
 };
 
