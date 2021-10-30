@@ -12,11 +12,19 @@
   text-align: left;
   padding: 10px 10px;
   cursor: pointer;
+  transition-duration: 0.2s;
   color: aliceblue;
 }
 
 .list-item:nth-child(odd) {
   background: #1b1b1b;
+}
+
+.expanded-container {
+  height: 0;
+  overflow: hidden;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier();
 }
 
 .expanded-container > div {
@@ -28,7 +36,25 @@
   color: aliceblue;
 }
 
+.expanded-show {
+  height: 110px;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier();
+}
+
 .transaction-hash {
   color: #2196f3;
   font-weight: bold;
+}
+
+.list-item:hover {
+  transform: scale(1.01);
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier();
+}
+
+.list-item:active {
+  transform: scale(1);
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier();
 }
