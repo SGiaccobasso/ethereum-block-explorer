@@ -21,7 +21,7 @@
 }
 
 .expanded-container {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier();
@@ -37,7 +37,7 @@
 }
 
 .expanded-show {
-  height: 110px;
+  max-height: 400px;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier();
 }
