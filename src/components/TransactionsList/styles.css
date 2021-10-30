@@ -1,12 +1,11 @@
 .list-container {
-  max-height: 100%;
   overflow-y: scroll;
   overflow-wrap: break-word;
   margin: 0;
   padding: 0;
-  border: 2px solid #2196f3;
   font-size: 14px;
   font-family: Arial, sans-serif;
+  width: 100%;
+  height: 425px;
   -webkit-overflow-scrolling: touch;
 }
-

@@ -15,7 +15,7 @@
   color: aliceblue;
 }
 
-.list-item:nth-child(even) {
+.list-item:nth-child(odd) {
   background: #1b1b1b;
 }
 

@@ -27,12 +27,10 @@ const BlockDetail: FC<Props> = ({ onClose, blockNumber }) => {
             <div className='modal-header'>
               <img src={logo} className='logo-title' alt='ETH' />
               <div className='title-section'>
-                <span className='detail-title'>Block {blockData.number}</span> #{blockData.hash}
+                <span className='detail-title'>Block {blockData.number}</span> <span className="hash-text">#{blockData.hash}</span>
               </div>
             </div>
-            <div className='list-container'>
-              <TransactionsList transactions={blockData.transactions} />
-            </div>
+            <TransactionsList transactions={blockData.transactions} />
           </div>
         ) : (
           <Loader />
