@@ -79,3 +79,16 @@
   font-size: 13px;
   font-weight: bold;
 }
+
+.status-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.error-message {
+  font-size: x-large;
+  color: aliceblue;
+}

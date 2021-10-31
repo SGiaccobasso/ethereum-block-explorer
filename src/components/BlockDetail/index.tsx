@@ -12,12 +12,19 @@ interface Props {
 
 const BlockDetail: FC<Props> = ({ onClose, blockNumber }) => {
   const [blockData, setBlockData] = useState<BlockWithTransactions>();
+  const [errorFetching, setErrorFetching] = useState('');
 
   useEffect(() => {
-    if (blockNumber !== 0) setBlockData(undefined);
-    window.provider.getBlockWithTransactions(blockNumber).then(data => {
-      setBlockData(data);
-    });
+    // Reset the state when there's a new block to fetch, if blockNumber is 0
+    // don't reset, so it doesn't show the loader during the unmount animation.
+    if (blockNumber) setBlockData(undefined);
+    setErrorFetching('');
+    window.provider
+      .getBlockWithTransactions(blockNumber)
+      .then(data => {
+        setBlockData(data);
+      })
+      .catch(e => setErrorFetching(e));
   }, [blockNumber]);
 
   return (
@@ -35,7 +42,9 @@ const BlockDetail: FC<Props> = ({ onClose, blockNumber }) => {
             <TransactionsList transactions={blockData.transactions} />
           </div>
         ) : (
-          <Loader />
+          <div className='status-container'>
+            {errorFetching ? <div className='error-message'>Could not fetch block data.</div> : <Loader />}
+          </div>
         )}
       </div>
       <div className={blockNumber ? 'bg show' : 'bg'} onClick={onClose} />
