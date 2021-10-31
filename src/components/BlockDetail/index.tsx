@@ -28,7 +28,7 @@ const BlockDetail: FC<Props> = ({ onClose, blockNumber }) => {
   }, [blockNumber]);
 
   return (
-    <div>
+    <>
       <div className={blockNumber ? `${styles.modal} ${styles.modalShow}` : `${styles.modal} ${styles.modalHidden}`}>
         {blockData ? (
           <div>
@@ -48,7 +48,7 @@ const BlockDetail: FC<Props> = ({ onClose, blockNumber }) => {
         )}
       </div>
       <div className={blockNumber ? `${styles.bg} ${styles.show}` : styles.bg} onClick={onClose} />
-    </div>
+    </>
   );
 };
 

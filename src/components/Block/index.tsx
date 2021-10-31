@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import styles from './styles.module.css';
-
 import logo from '../../assets/eth-diamond-rainbow.png';
 
 interface Props {
