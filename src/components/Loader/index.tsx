@@ -1,12 +1,11 @@
 import logo from '../../assets/eth-diamond-rainbow.png';
 import { FC } from 'react';
-
-import './styles.css';
+import styles from './styles.module.css';
 
 const TransactionsList: FC = () => {
   return (
-    <div className='loader-container'>
-      <img src={logo} className='loader' alt='ETH' />
+    <div className={styles.loaderContainer}>
+      <img src={logo} className={styles.loader} alt='ETH' />
     </div>
   );
 };

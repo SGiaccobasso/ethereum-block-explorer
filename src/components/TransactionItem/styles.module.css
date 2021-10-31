@@ -1,14 +1,14 @@
-.panel-expanded {
+.panelExpanded {
   max-height: 400px;
   overflow: hidden;
   transition: max-height 0.5s ease;
 }
 
-.panel-close {
+.panelClose {
   max-height: 0;
 }
 
-.list-item {
+.listItem {
   text-align: left;
   padding: 10px 10px;
   cursor: pointer;
@@ -16,44 +16,44 @@
   color: aliceblue;
 }
 
-.list-item:nth-child(odd) {
+.listItem:nth-child(odd) {
   background: #1b1b1b;
 }
 
-.expanded-container {
+.expandedContainer {
   max-height: 0;
   overflow: hidden;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier();
 }
 
-.expanded-container > div {
+.expandedContainer > div {
   padding-top: 10px;
 }
 
-.expanded-container > div > span {
+.expandedContainer > div > span {
   font-weight: bold;
   color: aliceblue;
 }
 
-.expanded-show {
+.expandedShow {
   max-height: 400px;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier();
 }
 
-.transaction-hash {
+.transactionHash {
   color: #2196f3;
   font-weight: bold;
 }
 
-.list-item:hover {
+.listItem:hover {
   transform: scale(1.01);
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier();
 }
 
-.list-item:active {
+.listItem:active {
   transform: scale(1);
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier();

@@ -1,5 +1,5 @@
 import { FC, useState, useEffect, useCallback } from 'react';
-import './styles.css';
+import styles from './styles.module.css';
 import Block from '../Block';
 import BlockDetail from '../BlockDetail';
 
@@ -21,7 +21,7 @@ const BlockList: FC = () => {
   useEffect(() => createNewBlocksListener(), [createNewBlocksListener]);
 
   return (
-    <div className='block-list'>
+    <div className={styles.blockList}>
       <BlockDetail onClose={() => setSelectedBlock(0)} blockNumber={selectedBlock} />
       {blockList.map(blockNumber => (
         <Block key={blockNumber} onClick={() => setSelectedBlock(blockNumber)}>

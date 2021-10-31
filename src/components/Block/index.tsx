@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import './styles.css';
+import styles from './styles.module.css';
+
 import logo from '../../assets/eth-diamond-rainbow.png';
 
 interface Props {
@@ -8,10 +9,10 @@ interface Props {
 
 const Block: FC<Props> = ({ children, onClick }) => {
   return (
-    <div className='container' onClick={e => onClick(e)}>
-      <img src={logo} className='logo' alt='ETH' />
-      <div className='text-container'>
-        <div className='title'>Block</div>
+    <div className={styles.container} onClick={e => onClick(e)}>
+      <img src={logo} className={styles.logo} alt='ETH' />
+      <div className={styles.textContainer}>
+        <div className={styles.title}>Block</div>
         <div>#{children}</div>
       </div>
     </div>

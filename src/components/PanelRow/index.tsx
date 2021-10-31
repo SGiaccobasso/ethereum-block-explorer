@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import './styles.css';
+import styles from './styles.module.css';
 
 interface Props {
   title: string;
 }
 
 const PanelRow: FC<Props> = ({ title, children }) => (
-  <div className='panel-row'>
-    <span className='panel-title'>{title}:</span> {children}
+  <div className={styles.panelRow}>
+    <span className={styles.panelTitle}>{title}:</span> {children}
   </div>
 );
 
